@@ -16,7 +16,6 @@ const searchButton = () => {
     }
 }
 const displayResult = allPhones => {
-    // console.log(allPhones)
     if (allPhones.length == 0) {
         document.getElementById('error').innerText = "Phones not found";
     } else {
@@ -26,7 +25,6 @@ const displayResult = allPhones => {
         // only 20 items,not more than 20
         const phones = allPhones.slice(0, 20);
         phones.forEach(phone => {
-            // console.log(phone)
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
@@ -52,9 +50,9 @@ const phoneDetails = phoneId => {
         .then(data => phoneInfo(data.data))
 }
 const phoneInfo = info => {
-    console.log(info)
+    // console.log(info)
     document.getElementById('phone-details').innerHTML = `
-    <div class="card w-100 mx-auto p-3">
+    <div class="card p-3">
     <img src="${info.image}" class="card-img-top img-fluid">
     <div class="card-body">
         <h3 class="card-title">Name: ${info.name}</h3>

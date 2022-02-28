@@ -20,19 +20,39 @@
             <h1 class="text-center text-success mt-3">Welcome to my Mobile-House</h1>
 
             <!-- Search Button -->
-            <div class="input-group w-50  mx-auto mt-5 mb-3">
-                <input type="text" id="input-box" class="form-control p-2 fs-4" placeholder="Write Phone Name"
-                    aria-describedby="button-search">
-                <button onclick="searchButton()" class="btn btn-secondary px-5 fs-4 fw-bold"
-                    type="button">Search</button>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                            <div class="input-group mt-5 mb-3">
+                                <input type="text" id="input-box" class="form-control form-control-lg p-2 fs-4"
+                                    placeholder="Phone Name" aria-describedby="button-search">
+                                <button onclick="searchButton()" class="btn btn-secondary px-5 fs-4 fw-bold"
+                                    type="button">Search</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                </div>
             </div>
 
             <!-- error handlgin -->
             <h2 id="error" class="text-center text-danger mt-5"></h2>
 
             <!-- phone Details -->
-            <div id="phone-details" class="my-4 w-50 mx-auto">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="phone-details" class="my-4 w-50 mx-auto">
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
             </div>
 
             <!-- Get all phones search name -->
