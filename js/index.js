@@ -1,3 +1,4 @@
+// input button for search phone by name
 const searchButton = () => {
     const inputField = document.getElementById('input-box');
     const inputText = inputField.value;
@@ -9,9 +10,11 @@ const searchButton = () => {
 const displayResult = allPhones => {
     const getPhones = document.getElementById('getPhones');
     getPhones.innerHTML = '';
+
+    // only 20 items,not more than 20
     const phones = allPhones.slice(0, 20);
     phones.forEach(phone => {
-        console.log(phone)
+        // console.log(phone)
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
@@ -20,10 +23,15 @@ const displayResult = allPhones => {
         <div class="card-body">
             <h3 class="card-title">${phone.phone_name}</h3>
             <h4 class="card-title">${phone.brand}</h4>
-            <div class="text-center"><button onclick="phoneDetails('')" class="btn btn-lg btn-primary fw-bold">Details</button></div>
+            <div class="text-center">
+            <button onclick="phoneDetails('${phone.slug}')" class="btn btn-lg btn-primary fw-bold">Details</button>
+            </div>
         </div>
     </div>
     `;
         getPhones.appendChild(div);
     });
+}
+const phoneDetails = phoneId => {
+    console.log(phoneId)
 }
