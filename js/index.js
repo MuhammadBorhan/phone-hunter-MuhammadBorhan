@@ -33,10 +33,10 @@ const displayResult = allPhones => {
         <div class="card p-3">
             <img src="${phone.image}" class="card-img-top">
             <div class="card-body">
-                <h3 class="card-title">${phone.phone_name}</h3>
-                <h4 class="card-title">${phone.brand}</h4>
-                <div class="text-center">
-                <button onclick="phoneDetails('${phone.slug}')" class="btn btn-lg btn-primary fw-bold">Details</button>
+                <h3 class="card-title">Name: ${phone.phone_name}</h3>
+                <h4 class="card-title">Brand: ${phone.brand}</h4>
+                <div class="text-center mt-4">
+                    <button onclick="phoneDetails('${phone.slug}')" class="btn btn-lg btn-primary fw-bold">Details</button>
                 </div>
             </div>
         </div>
@@ -54,13 +54,22 @@ const phoneDetails = phoneId => {
 const phoneInfo = info => {
     console.log(info)
     document.getElementById('phone-details').innerHTML = `
-    <div class="card w-50 mx-auto p-3">
+    <div class="card w-100 mx-auto p-3">
     <img src="${info.image}" class="card-img-top img-fluid">
     <div class="card-body">
-        <h3 class="card-title">${info.name}</h3>
-        <h4 class="card-title">${info.releaseDate}</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-            the card's content.</p>
+        <h3 class="card-title">Name: ${info.name}</h3>
+        <h4 class="card-title">Release Date: ${info.releaseDate ? info.releaseDate : 'release date not found'}</h4>
+        <h4 class="card-title">ChipSet: ${info.mainFeatures.chipSet}</h4>
+        <h4 class="card-title">Memory: ${info.mainFeatures.memory}</h4>
+        <h4 class="card-title">Storage: ${info.mainFeatures.storage}</h4>
+        <h4 class="card-title">Sensors: ${info.mainFeatures.sensors}</h4>
+        <h4 class="card-title">Bluetooth: ${info.others.Bluetooth}</h4>
+        <h4 class="card-title">GPS: ${info.others.GPS}</h4>
+        <h4 class="card-title">NFC: ${info.others.NFC}</h4>
+        <h4 class="card-title">Radio: ${info.others.Radio}</h4>
+        <h4 class="card-title">USB: ${info.others.USB}</h4>
+        <h4 class="card-title">WALAN: ${info.others.WLAN}</h4>
+        
     </div>
 </div>
     `;
