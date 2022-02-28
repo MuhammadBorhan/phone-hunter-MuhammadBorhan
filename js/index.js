@@ -2,6 +2,8 @@
 const searchButton = () => {
     const inputField = document.getElementById('input-box');
     const inputText = inputField.value;
+    document.getElementById('phone-details').innerHTML = '';
+    getPhones.innerHTML = '';
     inputField.value = '';
     fetch(`https://openapi.programming-hero.com/api/phones?search=${inputText}`)
         .then(res => res.json())
@@ -33,5 +35,19 @@ const displayResult = allPhones => {
     });
 }
 const phoneDetails = phoneId => {
-    console.log(phoneId)
+    fetch(`https://openapi.programming-hero.com/api/phone/${phoneId}`)
+        .then(res => res.json())
+        .then(data => phoneInfo(data.data))
+}
+const phoneInfo = info => {
+    document.getElementById('phone-details').innerHTML = `
+    <div class="card w-50 mx-auto p-3">
+    <img src="${info.image}" class="card-img-top img-fluid">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+            the card's content.</p>
+    </div>
+</div>
+    `
 }
