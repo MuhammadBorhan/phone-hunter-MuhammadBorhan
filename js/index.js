@@ -11,15 +11,16 @@ const displayResult = allPhones => {
     getPhones.innerHTML = '';
     const phones = allPhones.slice(0, 20);
     phones.forEach(phone => {
+        console.log(phone)
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+    <div class="card p-3">
+        <img src="${phone.image}" class="card-img-top">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                to additional content. This content is a little bit longer.</p>
+            <h3 class="card-title">${phone.phone_name}</h3>
+            <h4 class="card-title">${phone.brand}</h4>
+            <div class="text-center"><button onclick="phoneDetails('')" class="btn btn-lg btn-primary fw-bold">Details</button></div>
         </div>
     </div>
     `;
