@@ -72,8 +72,8 @@ const phoneInfo = info => {
         <h4 class="card-title"><span class="text-info fw-bold">ChipSet:</span> ${info.mainFeatures.chipSet}</h4>
         <h4 class="card-title"><span class="text-info fw-bold">Memory:</span> ${info.mainFeatures.memory}</h4>
         <h4 class="card-title"><span class="text-info fw-bold">Storage:</span> ${info.mainFeatures.storage}</h4>
-        <h4 class="card-title"><span class="text-info fw-bold">Sensors:</span> ${info.mainFeatures.sensors}</h4>
         <h4 class="card-title"><span class="text-info fw-bold">Display-Size:</span> ${info.mainFeatures.displaySize}</h4>
+        <h4 class="card-title"><span class="text-primary fw-bold">Sensors:</span> ${info.mainFeatures.sensors}</h4>
         <h3 class="text-primary fw-bold">Others</h3>
         <h4 class="card-title"><span class="text-info fw-bold">Bluetooth:</span> ${info?.others?.Bluetooth ? info.others.Bluetooth : 'Not Available'}</h4>
         <h4 class="card-title"><span class="text-info fw-bold">GPS:</span> ${info?.others?.GPS ? info.others.GPS : 'Not Available'}</h4>
