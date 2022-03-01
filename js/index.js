@@ -15,7 +15,7 @@ const searchButton = () => {
     // clear input value
     inputField.value = '';
     if (inputText == '') {
-        document.getElementById('error').innerText = "Please write phone's name";
+        document.getElementById('error').innerText = "Please write phones name";
         spinnerToggler('none')
     } else {
         fetch(`https://openapi.programming-hero.com/api/phones?search=${inputText}`)
@@ -24,6 +24,7 @@ const searchButton = () => {
     }
 }
 const displayResult = allPhones => {
+    console.log(allPhones)
     if (allPhones.length == 0) {
         document.getElementById('error').innerText = "Phones not found";
         spinnerToggler('none')
@@ -34,6 +35,7 @@ const displayResult = allPhones => {
         // only 20 items,not more than 20
         const phones = allPhones.slice(0, 20);
         phones?.forEach(phone => {
+            console.log(phone)
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
