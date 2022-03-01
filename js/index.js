@@ -31,8 +31,8 @@ const displayResult = allPhones => {
         <div class="card p-3">
             <img src="${phone.image}" class="card-img-top">
             <div class="card-body">
-                <h3 class="card-title">Name: ${phone.phone_name}</h3>
-                <h4 class="card-title">Brand: ${phone.brand}</h4>
+                <h3 class="card-title"><span class="text-info fw-bold">Name:</span> ${phone.phone_name}</h3>
+                <h4 class="card-title"><span class="text-info fw-bold">Brand:</span> ${phone.brand}</h4>
                 <div class="text-center mt-4">
                     <button onclick="phoneDetails('${phone.slug}')" class="btn btn-lg btn-primary fw-bold">Details</button>
                 </div>
@@ -55,18 +55,20 @@ const phoneInfo = info => {
     <div class="card p-3">
     <img src="${info.image}" class="card-img-top img-fluid">
     <div class="card-body">
-        <h3 class="card-title">Name: ${info.name}</h3>
-        <h4 class="card-title">Release Date: ${info.releaseDate ? info.releaseDate : 'release date not found'}</h4>
-        <h4 class="card-title">ChipSet: ${info.mainFeatures.chipSet}</h4>
-        <h4 class="card-title">Memory: ${info.mainFeatures.memory}</h4>
-        <h4 class="card-title">Storage: ${info.mainFeatures.storage}</h4>
-        <h4 class="card-title">Sensors: ${info.mainFeatures.sensors}</h4>
-        <h4 class="card-title">Bluetooth: ${info.others.Bluetooth}</h4>
-        <h4 class="card-title">GPS: ${info.others.GPS}</h4>
-        <h4 class="card-title">NFC: ${info.others.NFC}</h4>
-        <h4 class="card-title">Radio: ${info.others.Radio}</h4>
-        <h4 class="card-title">USB: ${info.others.USB}</h4>
-        <h4 class="card-title">WALAN: ${info.others.WLAN}</h4>
+        <h3 class="card-title"><span class="text-info fw-bold">Name:</span> ${info.name}</h3>
+        <h4 class="card-title"><span class="text-info fw-bold">Release Date:</span> ${info.releaseDate ? info.releaseDate : 'Release Date Not Found'}</h4>
+        <h3 class="text-primary">Main-Features</h3>
+        <h4 class="card-title"><span class="text-info fw-bold">ChipSet:</span> ${info.mainFeatures.chipSet}</h4>
+        <h4 class="card-title"><span class="text-info fw-bold">Memory:</span> ${info.mainFeatures.memory}</h4>
+        <h4 class="card-title"><span class="text-info fw-bold">Storage:</span> ${info.mainFeatures.storage}</h4>
+        <h4 class="card-title"><span class="text-info fw-bold">Sensors:</span> ${info.mainFeatures.sensors}</h4>
+        <h3 class="text-primary">Others</h3>
+        <h4 class="card-title"><span class="text-info fw-bold">Bluetooth:</span> ${info.others.Bluetooth}</h4>
+        <h4 class="card-title"><span class="text-info fw-bold">GPS:</span> ${info.others.GPS}</h4>
+        <h4 class="card-title"><span class="text-info fw-bold">NFC:</span> ${info.others.NFC}</h4>
+        <h4 class="card-title"><span class="text-info fw-bold">Radio:</span> ${info.others.Radio}</h4>
+        <h4 class="card-title"><span class="text-info fw-bold">USB:</span> ${info.others.USB}</h4>
+        <h4 class="card-title"><span class="text-info fw-bold">WALAN:</span> ${info.others.WLAN}</h4>
         
     </div>
 </div>
